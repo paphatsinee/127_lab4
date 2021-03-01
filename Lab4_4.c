@@ -1,27 +1,26 @@
-#include<stdio.h>
-void acronym (char *a);
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
 int main()
 {
-    char b[100];
-    gets(b);
-    acronym(b);
-}
+    char b[1000];
+    char a[11][5]={"i","of","the","on","at","for","with","a","an","in","and"};
+    char *c;
+    int i=0,j,k=0;
 
-void acronym(char *a)
-{
-    int i,j;
-    char b[100];
-    char *d;
+    scanf("%[^\n]s",b);
+    c=strtok(b," ");
 
-    j=strlen(a);
-    for(i=0;i<j;i++)
+    while(c!=NULL)
     {
-        if(i==0)
-            printf("%c",toupper(a[0]));
-        else if((a[i]==' ')&&(a[i]!= 'i','of','the','on','at','for','with','a','an','in','and'))
-            printf("%c",toupper(a[i+1]));
-
+        for(j=0;j<11;j++)
+            if(strcmp(c,a[j]))
+                k++;
+        if(k==11||i==0)
+            printf("%c",toupper(c[0]));
+            c=strtok(NULL," ");
+            i++, k=0;
     }
 
-
+    return 0;
 }
