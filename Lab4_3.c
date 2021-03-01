@@ -2,6 +2,10 @@
 #include<string.h>
 int main()
 {
-    char st[100];
-    scanf("%[^\n]s",st);
+    char st[200];
+    scanf("%s",st);
+
+
+
+
 }
